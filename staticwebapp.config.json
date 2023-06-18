@@ -36,7 +36,7 @@
       "X-Frame-Options": "DENY",
       "X-Xss-Protection": "1; mode=block",
       "X-Content-Type-Options": "nosniff",
-      "Content-Security-Policy": "default-src 'none'; upgrade-insecure-requests; base-uri 'self'; frame-ancestors 'none'; form-action 'none'; object-src 'none'; style-src 'self';",
+      "Content-Security-Policy": "default-src 'none'; upgrade-insecure-requests; base-uri 'self'; frame-ancestors 'none'; form-action 'none'; object-src 'none'; style-src 'self'; img-src 'self'",
       "Referrer-Policy": "strict-origin-when-cross-origin",
       "Permissions-Policy": "accelerometer=(self), camera=(self), geolocation=(self), gyroscope=(self), magnetometer=(self), microphone=(self), payment=(self), usb=(self)",
       "X-Permitted-Cross-Domain-Policies": "none",
