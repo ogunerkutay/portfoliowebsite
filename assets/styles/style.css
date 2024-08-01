@@ -545,7 +545,14 @@ header .navbar ul li a:hover{
         height: 25rem;
         font-size: 1.3rem;
     }
-
-
-
  }
+
+
+ body {
+    position: relative;
+    z-index: 1;
+}
+
+header, section {
+    background-color: rgba(0, 0, 0, 0.7);
+}
