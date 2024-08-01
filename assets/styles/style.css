@@ -154,7 +154,7 @@ header .navbar ul li a:hover{
 .home{
     display: flex;
     justify-content: center;
-    flex-flow: column;
+    flex-flow:column;
     padding:0 15rem;
     
 }
@@ -173,42 +173,12 @@ header .navbar ul li a:hover{
     color:var(--font-sec-col);
 }
 
-.home .social-icons{
-    margin-top: 2rem;
-    display: relative;
-
-}
-
-.home .social-icons i{
-    background:#333;
-    height: 5rem;
-    width: 5rem;
-    object-fit: cover;
-    text-align: center;
-    vertical-align: center;
-    align-self: center;
-    padding-top: 0.75rem;
-    font-size: 3.5rem;
-    border-radius: 30%;
-    color: var(--font-col);
-    cursor:pointer;
-}
-
-.home .social-icons #icon2{
-    margin-left: 1.5rem;
-}
-
-.home .social-icons i:hover{
-    background-color: var(--font-sec-col);
-}
-
 .home p{
     font-size:2rem;
     color:#eee;
     padding: 1rem 0;
     text-transform: none;
 }
-
 
 .about .row{
     display: flex;
@@ -261,190 +231,198 @@ header .navbar ul li a:hover{
     color:#fff;
 }
 
-
-
-.experience .box-container{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    padding:1rem 0;
-    padding-left: 3rem;
-}
-
-.experience .box-container .box{
-    height: 30rem;
-    width:27rem;
-    margin:4rem 4rem;
-    padding-left: 4rem;
-    border-left: .2rem solid var(--font-col);;
+.experience .timeline-container {
+    overflow-x: auto;
+    padding: 20px 0;
     position: relative;
+    white-space: wrap; /* Prevents the content from wrapping */
+    /* Make sure the container width fits the content */
 }
 
-.experience .box-container .box span{
-    font-size: 1.3rem;
-    background:#222;
-    color:var(--font-col);
-    border-radius: 5rem;
-    padding:.5rem 2.5rem;
-}
-
-.experience .box-container .box h3{
-    font-size: 2rem;
-    color:var(--font-sec-col);
-    padding-top: 1.5rem;
-}
-.experience .box-container .box h2{
-    font-size: 1.7rem;
-    color:var(--font-col);
-    padding-top: 1.5rem;
-}
-
-.experience .box-container .box p{
-    font-size: 1.4rem;
-    color:#eee;
-    padding: 1rem 0;
-    text-transform: none;
-}
-
-.experience .box-container .box i{
+.experience .timeline-container::-webkit-scrollbar {
+    height: 1.4rem; /* Adjust scrollbar height */
     position: absolute;
-    top:-1.5rem; left:-2.5rem;
-    height:5rem;
-    width: 5rem;
+    bottom: 0; /* Position scrollbar at the bottom */
+}
+
+.experience .timeline-container::-webkit-scrollbar-track {
+    background: #222;
+}
+
+.experience .timeline-container::-webkit-scrollbar-thumb {
+    background: var(--font-sec-col);
+}
+
+.experience .timeline {
+    display: flex;
+    flex-direction:row;
+    position: relative;
+    /* Ensure the timeline width fits the total width of all items */
+}
+
+.experience .timeline-item {
+    flex: 0 0 auto; /* Allow items to have a fixed width */
+    max-width: 300px; /* Limit the width */
+    margin-right: 40px; /* Space between items */
+    position: relative;
+    text-align: center; /* Center the content */
+    display: inline-block; /* Ensure items are in a single row */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+
+.experience .timeline-item::after {
+    content: '⇠'; /* Larger arrow */
+    position: absolute;
+    top: 50%;
+    right: -30px; /* Positioned to the right of each item */
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    color: var(--font-sec-col);
+}
+
+.experience .timeline-item:last-child::after {
+    content: ''; /* Removes the arrow from the last item */
+}
+
+.experience .timeline-icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    line-height: 5rem;
-    text-align: center;
-    font-size: 2rem;
-    color:#fff;
-    background:var(--font-sec-col);
-}
-
-
-
-
-.projects .box-container{
+    background: var(--font-sec-col);
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    padding:2rem 4rem;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 }
-.projects .box-container .box{
-    display: relative;
+
+.experience .timeline-content {
+    background: #222;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 60px;
+}
+
+.experience .timeline-content span {
+    font-size: 1.3rem;
+    background: #333;
+    color: var(--font-col);
+    border-radius: 5rem;
+    padding: 0.5rem 1.5rem;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.experience .btn-website {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    text-decoration: none; /* Remove underline */
+    color: var(--font-col); /* Text color */
+    padding: 5px 10px; /* Padding around text */
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s; /* Smooth background color change */
+    max-width: 300px; /* Limit button width */
+    overflow: hidden; /* Allow overflow to be visible */
+}
+
+.experience .btn-website:hover {
+    background: var(--font-sec-col); /* Button background color */
+}
+
+.experience .btn-website-icon {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: inline-block;
+}
+
+
+.experience .timeline-content h3 {
+    font-size: 1.8rem;
+    color: var(--font-sec-col);
+    margin-bottom: 5px;
+}
+
+.experience .timeline-content h2 {
+    font-size: 1.5rem;
+    color: var(--font-col);
+    margin-bottom: 10px;
+}
+
+.experience .timeline-content p {
+    font-size: 1.4rem;
+    color: #eee;
+    text-transform: none;
+}
+
+.experience .timeline-content ul {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.experience .timeline-content li {
+    font-size: 1.4rem;
+    color: #eee;
+    margin-bottom: 5px;
+}
+
+.skills .row{
+    display: flex;
+    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    height: 40rem;
-    width: 40rem;
-    border-radius: 1rem;
-    margin:3rem;
+    padding:1rem 0;
+}
+
+.skills .row .info{
+    flex:1 1 48rem;
+    padding:2rem 1rem;
+    padding-left: 6rem;
+}
+
+.skills .row .info p{
+    text-transform: none;
+    font-size: 2rem;
+    color:var(--font-col);
+    padding:1rem 0;
+    font-weight: normal;
+}
+
+.skills .row .info p span{
+    color:var(--font-sec-col);
+}
+
+.skills .row .counter{
+    flex:1 1 48rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.skills .row .counter .box{
+    width:20rem;
     background:#222;
-    overflow: hidden;
+    text-align: center;
+    padding: 2rem;
+    margin:2rem;
 }
 
-.projects .box-container .box h1{
-    text-align: center;
+.skills .row .counter .box img{
+    height: 7rem;
+    width: 7rem;
+}
+
+.skills .row .counter .box h3{
     font-size: 2rem;
-    line-height: 5rem;
-    margin-bottom: 2rem;
-    color:var(--font-sec-col);
-    border-bottom: .1rem solid #fff4;
-}
-
-.projects .box-container .box h3{
-    text-align: center;
-    font-style: italic;
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-    color:var(--font-col); 
-}
-
-
-.projects .box-container .box p{
-    height: 17rem;
-    text-transform: none;
-    font-size: 1.5rem;
-    color:var(--font-col);
-    padding:1rem 0;
-    margin: 1rem;
-    font-weight: normal;
-}
-
-
-.projects .box-container .box a{
-    display:block;
-    text-align: center;
-    align-content: center;
-
-}
-
-.projects .box-container .box .project_images{
-    display: block;
-    align-content: center;
-    text-align: center;
-}
-
-.projects .box-container .box img{
-    height: 5rem;
-    width: 5rem;
-    margin-bottom: 0rem;
-    text-transform: none;
-    font-size: 1.5rem;
-    margin-left: 0.5rem;
-    color:var(--font-col);
-    padding:1rem 0;
-    border-radius: 30%;
-    background-color: #1a1a1a;
-    font-weight: normal;
-}
-
-.projects .box-container .box img:hover{
-    background-color: var(--font-col);
-    transform: scale(1.2);
-}
-.projects .box-container :hover.box{
-    transform: scale(1.1);
-}
-
-
-.contact .row{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.contact .row .content{
-    flex:1 1 30rem;
-    padding:8rem;
-    padding-bottom: 0;
-}
-
-.contact .row .content .info h3{
-    text-transform: none;
-
-    
-}
-
-.contact .row .content .title{
-    text-transform: uppercase;
     color:#fff;
-    font-size: 3rem;
-    padding-bottom: 2rem;
 }
 
-.contact .row .content .info h3{
-    display: flex;
-    align-items: center;
-    font-size: 2rem;
-    color:#eee;
-    padding:1rem 0;
-    font-weight: normal;
-    font-style: italic;
-}
 
-.contact .row .content .info h3 i{
-    padding-right: 1rem;
-    color:var(--font-sec-col);
-}
 .top{
     position: fixed;
     bottom:7.5rem; right: 2rem;
@@ -460,11 +438,6 @@ header .navbar ul li a:hover{
     background-color: var(--font-col);
     transform: scale(1.1);
 }
-
-
-
-
-
 
 
 
@@ -527,23 +500,6 @@ header .navbar ul li a:hover{
  
     .experience .box-container .box{
         width:100%;
-    }
-
-    .projects .box-container .box{
-        width:100%;
-    }
-
-    .contact .row form{
-        margin:3rem 0;
-    }
-
-    .projects .box-container .box{
-        height: 55rem;
-    }
-
-    .projects .box-container .box p{
-        height: 25rem;
-        font-size: 1.3rem;
     }
  }
 
