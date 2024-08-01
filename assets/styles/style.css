@@ -58,6 +58,9 @@ section{
     margin-top: 1rem;
     font-size: 2rem;
     border-radius: 5rem;
+    text-align: center;
+    text-decoration: none;
+    border: none;
 }
 
 .btn i{
@@ -151,12 +154,17 @@ header .navbar ul li a:hover{
     display: none;
 }
 
-.home{
+.home {
     display: flex;
     justify-content: center;
-    flex-flow:column;
-    padding:0 15rem;
-    
+    flex-direction: column;
+    align-items: flex-start; /* Center all items horizontally */
+    padding: 0 15rem;
+}
+
+.home a {
+    display: inline-block; /* Ensures <a> elements only take up the necessary width */
+    margin: 0.5rem; /* Adds space around the buttons */
 }
 
 .home h3{
@@ -178,6 +186,10 @@ header .navbar ul li a:hover{
     color:#eee;
     padding: 1rem 0;
     text-transform: none;
+}
+
+.home a {
+    display: inline-block; /* Ensures <a> elements only take up the necessary width */
 }
 
 .about .row{
