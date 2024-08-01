@@ -15,6 +15,9 @@ function createMatrixBackground() {
         column.style.color = colors[Math.floor(Math.random() * colors.length)];
         column.style.animationDuration = `${15 + Math.random() * 10}s`;
         column.style.opacity = Math.random() * 0.5 + 0.5;
+        column.style.zIndex = Math.floor(Math.random() * 100);
+        const fontSize = Math.random() * 18 + 6;
+        column.style.fontSize = `${fontSize}px`;
 
         let content = '';
         for (let j = 0; j < 50; j++) {
